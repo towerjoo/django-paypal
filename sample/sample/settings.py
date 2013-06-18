@@ -1,5 +1,5 @@
 """
-Django settings for zhutao project.
+Django settings for sample project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -56,9 +56,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'zhutao.urls'
+ROOT_URLCONF = 'sample.urls'
 
-WSGI_APPLICATION = 'zhutao.wsgi.application'
+WSGI_APPLICATION = 'sample.wsgi.application'
 
 
 # Database
@@ -95,12 +95,8 @@ if PAYPAL_SANDBOX:
     PAYPAL_WPP_USER = "zhutao_1287718017_biz_api1.halfquest.com"
     PAYPAL_WPP_PASSWORD = "1287718030"
     PAYPAL_WPP_SIGNATURE = "AFcWxV21C7fd0v3bYYYRCpSSRl31AHtkUsWnOgyE-x.nYJtgYIlK2bPl"
-else:
-    PAYPAL_WPP_USER = "towerjoo_api1.odesk.com"
-    PAYPAL_WPP_PASSWORD = "BSBMKQXSPB6PAT32"
-    PAYPAL_WPP_SIGNATURE = "AFcWxV21C7fd0v3bYYYRCpSSRl31AlTFKbPdr5WsWNh87H9J5ulAzDrl"
 
-PAYPAL_WPP_VERSION = "2.3"
+PAYPAL_WPP_VERSION = "65.1"
 
 PAYPAL_RECEIVER_EMAIL = 'zhutao@lehu-tech.com'
 

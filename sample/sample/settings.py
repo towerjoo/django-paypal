@@ -105,7 +105,7 @@ PAYPAL_RECEIVER_EMAIL = 'zhutao@lehu-tech.com'
 MOPAY_TEST = False
 MOPAY_TESTER_ID = "www.vz.net:RpJSGrUI6XwXolv9MUQm8Q"
 
-SITE_DOMAIN = "http://127.0.0.1:8000"
+SITE_DOMAIN = "http://ec2-50-19-65-122.compute-1.amazonaws.com:8000"
 # logging settings
 import logging
 from logging.handlers import TimedRotatingFileHandler

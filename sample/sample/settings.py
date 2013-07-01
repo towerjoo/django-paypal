@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
+
 import sys
 sys.path.insert(0, os.path.join(BASE_DIR, "../"))
 
@@ -104,3 +106,17 @@ MOPAY_TEST = False
 MOPAY_TESTER_ID = "www.vz.net:RpJSGrUI6XwXolv9MUQm8Q"
 
 SITE_DOMAIN = "http://127.0.0.1:8000"
+# logging settings
+import logging
+from logging.handlers import TimedRotatingFileHandler
+root = logging.getLogger()
+LOG = True
+if LOG and len(root.handlers) == 0:
+    level = logging.DEBUG
+    filename = os.path.join(ROOT_PATH, "logs", "filelog.log")
+    format = '%(asctime)s %(levelname)s %(pathname)s %(module)s.%(funcName)s Line:%(lineno)d %(message)s'
+    hdlr = TimedRotatingFileHandler(filename, "midnight", 1, 100)
+    fmt = logging.Formatter(format)
+    hdlr.setFormatter(fmt)
+    root.addHandler(hdlr)
+    root.setLevel(level)

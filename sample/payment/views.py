@@ -20,14 +20,13 @@ def index(request, template="index.html"):
     return render_to_response(template, {"form" : form})
 
 def notify(request):
-    import os
-    f = os.path.join(os.path.abspath(os.path.dirname(__file__)), "log.txt")
-    fh = open(f, "w+")
-    fh.write(request.GET)
-    fh.close()
+    import logging
+    logging.info(request.GET)
     
 
 def return_(request):
+    import logging
+    logging.info(request.GET)
     out = """<script>
     if (window.opener){
     window.close();
@@ -39,6 +38,8 @@ def return_(request):
     return HttpResponse(out)
 
 def cancel(request):
+    import logging
+    logging.info(request.GET)
     out = """<script>
     if (window.opener){
     window.close();
